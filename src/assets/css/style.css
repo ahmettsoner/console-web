@@ -1,0 +1,74 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.terminal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 98%;    /* Full width */
+    max-height: 96vh; /* Limit terminal height to viewport height */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scrolling within terminal */
+}
+
+.output {
+    flex-direction: column; 
+    flex-grow: 1;
+    overflow-y: hidden; /* Hide scrollbar */
+}
+
+.output pre {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    margin-right: 8px;
+}
+
+input[type="text"] {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    padding: 5px;
+    transition: border-color 0.3s;
+    border-bottom: solid; /* Requires defined border on focus */
+}
+
+a {
+    text-decoration: none; /* Remove the underline */
+    font-family: "Courier New", Courier, monospace; /* Match the terminal font */
+    transition: color 0.2s; /* Smooth transition for hover effect */
+}
+
+.suggestion-list {
+    padding: 5px;
+    cursor: pointer; /* Indicate clickable/selectable */
+}
+
+.suggestion-item {
+    padding: 8px 10px;
+    cursor: pointer;
+}
+
+.suggestion-item.selected {
+    background-color: transparent; /* Define in theme */
+}
+
+
+
+

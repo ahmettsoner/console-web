@@ -1,0 +1,32 @@
+{
+  "name": "consoleweb",
+  "description": "A project with Webpack and TypeScript support",
+  "main": "dist/terminal.js",
+  "scripts": {
+    "build": "tsc && webpack --config webpack.config.js && npm run copy-statics",
+    "copy-public": "copyfiles -u 1 src/public/**/* dist/",
+    "copy-views": "copyfiles -u 1 src/views/**/* dist/",
+    "copy-assets": "copyfiles -u 1 src/assets/**/* dist/",
+    "copy-terminal-comp-ui": "copyfiles -u 1 src/terminal-ui.html dist/",
+    "copy-statics": "concurrently \"npm run copy-views\" \"npm run copy-public\" \"npm run copy-assets\" \"npm run copy-terminal-comp-ui\"",
+    "start": "node dist/server/server.js",
+    "dev": "concurrently \"webpack --config webpack.config.js --watch\" \"tsc --watch\" \"nodemon dist/server/server.js\" \"copy-statics\"",
+    "clean": "rimraf dist",
+    "postinstall": "npm run build && npm run copy-views"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "concurrently": "^9.1.2",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.9",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
