@@ -2,19 +2,22 @@
     "compilerOptions": {
         "target": "ES6",
         "module": "commonjs",
-        "rootDir": "./src",
-        "outDir": "./dist",
-        "esModuleInterop": true,
+        "rootDir": "src",
+        "outDir": "dist",
         "strict": true,
-        "declaration": true,
-        "baseUrl": "./",
-        "paths": {
-            "consoleweb/*": [
-                "dist/*"
-            ],
-        }
+        "sourceMap": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "types": [
+            "node"
+        ],
+        "moduleResolution": "node"
     },
     "include": [
         "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

@@ -1,5 +1,6 @@
 {
   "name": "consoleweb",
+  "version": "1.0.3",
   "description": "A project with Webpack and TypeScript support",
   "main": "dist/terminal.js",
   "scripts": {
@@ -14,6 +15,9 @@
     "clean": "rimraf dist",
     "postinstall": "npm run build && npm run copy-views"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2"
